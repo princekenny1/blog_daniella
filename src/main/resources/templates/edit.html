@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://www.rwandair.com/wp-content/themes/rwandairajax/imgs/favi.png">
+    <meta name="description"
+          content="RwandAir affordable and cheap flights from to Kigali,Entebbe,Nairobi,Bujumbura,Lagos,Abuja,Accra,Dubai,Heathrow,Brussels">
+    <title> Edit page</title>
+
+
+</head>
+
+
+<body>
+<form action="/update" method="post">
+    <div class="imgcontainer">
+    </div>
+
+    <div class="container">
+        <input type="hidden" placeholder="Enter Username" name="username" th:field="*{user.id}" required>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" th:field="*{user.username}" required>
+
+        <label for="ps  w"><b>Password</b></label>
+        <input type="text" placeholder="Enter Password" name="password" th:field="*{user.password}" required>
+
+        <button type="submit">update</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+</body>
+</html>

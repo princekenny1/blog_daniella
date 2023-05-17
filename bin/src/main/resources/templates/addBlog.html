@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
+</head>
+<body>
+<div class="app-container">
+    <div th:replace="fragments :: side-bar"></div>
+    <div class="app-content">
+        <div th:replace="fragments :: header-nav"></div>
+        <div class="app-content-actions">
+            <form action="/saveBlog" method="post" th:object="${blog}">
+                <div class="imgcontainer">
+                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="title"><b>Title</b></label>
+                    <input type="text" placeholder="Enter Title" th:field="*{title}" required>
+
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" placeholder="Enter Description" th:field="*{description}" required>
+
+                    <button type="submit">save</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var modeSwitch = document.querySelector('.mode-switch');
+    modeSwitch.addEventListener('click', function () {
+        document.documentElement.classList.toggle('light');
+        modeSwitch.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
